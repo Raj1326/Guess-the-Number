@@ -63,9 +63,9 @@ h1 {
   transform: translate(-50%, +50%);
 }
 .between {
-  font-size: 1.4 rem;
+  font-size: 2rem; /* Increased font size */
   position: absolute;
-  top: rem;
+  top: 2rem;
   right: 2rem;
 }
 .again {
@@ -93,4 +93,10 @@ h1 {
   font-family: inherit;
   padding: 2rem 3rem;
   cursor: pointer;
+}
+.message,
+.label-score,
+.label-highscore {
+  font-size: 2rem; /* Increased font size */
+  margin-bottom: 2rem; /* Added margin for spacing */
 }

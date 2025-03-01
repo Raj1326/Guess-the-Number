@@ -13,16 +13,28 @@ let highScore = 0;
 function displayMessage(message) {
   document.querySelector(".message").textContent = message;
 }
+//function to set score
 function setScore(score) {
   document.querySelector(".score").textContent = score;
 }
+//function to set highscore
 function setHighScore(highScore) {
   document.querySelector(".highscore").textContent = highScore;
 }
+//function to generate random number
 function generateRandomNumber() {
   return Math.trunc(Math.random() * 20) + 1;
 }
-
+//function to set styles
+function setStyles(bodyColor, numberWidth) {
+  document.querySelector("body").style.backgroundColor = bodyColor;
+  document.querySelector(".number").style.width = numberWidth;
+}
+//function to disable game
+function disableGame(disable) {
+  document.querySelector(".check").disabled = disable;
+  document.querySelector(".guess").disabled = disable;
+}
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
@@ -36,10 +48,9 @@ document.querySelector(".check").addEventListener("click", function () {
     }
     displayMessage("🎉 Correct Number !");
     document.querySelector(".number").textContent = secretNumber;
-    document.querySelector("body").style.backgroundColor = "#60b347";
-    document.querySelector(".number").style.width = "30rem";
+    setStyles("#60b347", "30rem");
     //disable the click button
-    document.querySelector(".check").disabled = true;
+    disableGame(true);
   } else if (guess != secretNumber) {
     if (score > 0) {
       displayMessage(guess > secretNumber ? "📈 Too High !" : "📉 Too Low !");
@@ -59,6 +70,6 @@ document.querySelector(".again").addEventListener("click", () => {
   setScore(score);
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
-  document.querySelector("body").style.backgroundColor = "#222";
-  document.querySelector(".number").style.width = "15rem";
+  disableGame(false);
+  setStyles("#222", "15rem");
 });
