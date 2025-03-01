@@ -8,7 +8,7 @@ let secretNumber = generateRandomNumber();
 
 let score = 20;
 let highScore = 0;
-
+let guessNumber = 0;
 //function to display message
 function displayMessage(message) {
   document.querySelector(".message").textContent = message;
@@ -52,13 +52,18 @@ document.querySelector(".check").addEventListener("click", function () {
     //disable the click button
     disableGame(true);
   } else if (guess != secretNumber) {
-    if (score > 0) {
-      displayMessage(guess > secretNumber ? "📈 Too High !" : "📉 Too Low !");
-      score--;
-      setScore(score);
+    if (guess === guessNumber) {
+      displayMessage("⚠️ You already guessed that number!");
     } else {
-      displayMessage("💥 You lost the game !");
-      setScore(0);
+      if (score > 0) {
+        displayMessage(guess > secretNumber ? "📈 Too High !" : "📉 Too Low !");
+        score--;
+        setScore(score);
+      } else {
+        displayMessage("💥 You lost the game !");
+        setScore(0);
+      }
+      guessNumber = guess;
     }
   }
 });
@@ -72,4 +77,5 @@ document.querySelector(".again").addEventListener("click", () => {
   document.querySelector(".guess").value = "";
   disableGame(false);
   setStyles("#222", "15rem");
+  guessNumber = 0; // Reset the last guessed number
 });
