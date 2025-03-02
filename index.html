@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <header>
         <h1>Guess My Number!</h1>
         <p class="between">(Between 1 to 20)</p>
@@ -18,16 +19,41 @@
         <div class="number">?</div>
     </header>
     <main>
+
+        <!-- Add these elements inside the <main> tag -->
         <section class="left">
+            <p class="current-player">Current Turn: <span class="current-player-name"></span></p>
             <input type="number" class="guess" />
             <button class="btn check">Check!</button>
         </section>
         <section class="right">
             <p class="message">Start guessing...</p>
-            <p class="label-score">💯 Score:<span class="score">20</span> </p>
+            <br />
+            <p class="label-score">💯 Score <span class="player1-name"></span>: <span class="score1">20</span></p>
+            <p class="label-score">💯 Score <span class="player2-name"></span>: <span class="score2">20</span></p>
             <p class="label-highscore">🎖️ HighScore: <span class="highscore">0</span></p>
+            <p class="label-highscore-name">🏆 High Scorer: <span class="highscore-name"></span></p>
         </section>
+
     </main>
+    <div class="modal">
+        <div class="modal-content">
+            <p class="modal-heading">Let's play the game</p>
+            <h2 class="error"></h2>
+            <h2>
+                <label> Player 1:
+                    <input type="text" class="player1" />
+                </label>
+            </h2>
+            <h2>
+                <label> Player 2:
+                    <input type="text" class="player2" />
+                </label>
+            </h2>
+            <button class="btn start">Start!</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
     <script src="script.js"></script>
 </body>
 

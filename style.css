@@ -63,7 +63,7 @@ h1 {
   transform: translate(-50%, +50%);
 }
 .between {
-  font-size: 2rem; /* Increased font size */
+  font-size: 3rem; /* Increased font size */
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -96,7 +96,88 @@ h1 {
 }
 .message,
 .label-score,
-.label-highscore {
+.label-highscore,
+.player,
+.highscoreBy {
   font-size: 2rem; /* Increased font size */
   margin-bottom: 2rem; /* Added margin for spacing */
+}
+.highscoreBy {
+  margin-top: 2rem; /* Added margin for spacing */
+  /*make it more highligted*/
+  font-weight: bold; /* Make the text bold */
+  color: #ffcc00; /* Change the text color to a highlighted color */
+  background-color: #333; /* Add a background color */
+  padding: 1rem; /* Add padding for better spacing */
+  border-radius: 5px; /* Add rounded corners */
+}
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2; /* Ensure modal is above the overlay */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.modal-content {
+  background-color: #222;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative; /* Added to position the close button */
+  z-index: 3; /* Ensure modal content is above the modal */
+}
+.modal-heading {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.modal-content label {
+  font-size: 1.5rem;
+}
+.modal-content input {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+.modal-content .btn {
+  margin-top: 1rem;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Adjusted to place the button correctly */
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Ensure overlay is below the modal */
+}
+/* Blurred background effect */
+.blurred {
+  filter: blur(5px);
+}
+
+.current-player {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
